@@ -6,28 +6,8 @@ Awsome agent skills with curated skills, scripts, templates. etc. for AI coding 
 | Skill | Purpose |
 |-------|---------|
 | [aws-cost-optimization](skills/aws-cost-optimization/SKILL.md) | Review AWS infrastructure costs with evidence, savings assumptions, and trade-offs. |
-| [app-performance-optimization](skills/app-performance-optimization/SKILL.md) | Analyze web application performance and produce a prioritized tuning report across browser, network, backend, and data layers. |
+| [webapp-performance-review](skills/webapp-performance-review/SKILL.md) | Statically review web application source, configuration, and dependencies and produce a prioritized performance tuning report. |
 | [token-efficiency](skills/token-efficiency/SKILL.md) | Reduce unnecessary context, tool output, and response verbosity while preserving correctness and required checks. |
-
-### Web application performance review
-
-Use `app-performance-optimization` with a repository, application URL, or existing
-performance artifacts. It adapts to the application's stack and produces a report
-with evidence, prioritized recommendations, trade-offs, and validation plans.
-Repository-only reviews identify hypotheses and the measurements needed to verify
-them. Analysis and reporting are the default; implementation can be requested too.
-
-Example in Claude Code:
-
-```text
-/tlephan-skills:app-performance-optimization Analyze this web application and write a performance tuning report. Prioritize slow user journeys and distinguish measured bottlenecks from code-based hypotheses.
-```
-
-In Cursor, invoke `/app-performance-optimization` with the same request. Reports
-default to `app-performance-report.md` unless a different location is requested
-or established by the project. See the skill's
-[research sources](skills/app-performance-optimization/references/sources.md)
-for the primary documentation behind its diagnostic guidance.
 
 ## Local skill links
 
