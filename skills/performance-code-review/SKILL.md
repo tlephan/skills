@@ -1,5 +1,5 @@
 ---
-name: webapp-performance-code-review
+name: performance-code-review
 description: Statically review web application source code, configuration, and dependencies for performance risks and produce a prioritized tuning report with file-level evidence, trade-offs, and implementation guidance. Use for repository-based performance audits of frontends, backends, APIs, and data access layers.
 ---
 
@@ -80,7 +80,7 @@ Prefer focused changes over rewrites or infrastructure expansion.
 
 Use [report-template.md](references/report-template.md). Save to the user's chosen
 path or the repository's report convention; otherwise use
-`webapp-performance-code-review.md` in the project root. Preserve an unrelated existing
+`performance-code-review.md` in the project root. Preserve an unrelated existing
 report by choosing a dated filename. If writing is unavailable, return the report
 in the response.
 
