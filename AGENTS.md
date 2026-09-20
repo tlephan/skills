@@ -45,6 +45,6 @@ For documentation and skill changes, check frontmatter, relative links, and
 referenced files. Run `git diff --check` to catch whitespace errors.
 
 To manually try the plugin, launch `claude --plugin-dir .` from the repository
-root, then invoke `/tlephan-skills:aws-cost-optimization` in Claude Code.
+root, then invoke `/tlephan-skills:aws-iac-cost-review` in Claude Code.
 For Cursor, follow the local plugin installation steps in `README.md` and confirm
 the skill appears in Customize after reloading the window.

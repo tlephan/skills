@@ -5,8 +5,8 @@ Awsome agent skills with curated skills, scripts, templates. etc. for AI coding 
 
 | Skill | Purpose |
 |-------|---------|
-| [aws-cost-optimization](skills/aws-cost-optimization/SKILL.md) | Review AWS infrastructure costs with evidence, savings assumptions, and trade-offs. |
-| [webapp-performance-review](skills/webapp-performance-review/SKILL.md) | Statically review web application source, configuration, and dependencies and produce a prioritized performance tuning report. |
+| [aws-iac-cost-review](skills/aws-iac-cost-review/SKILL.md) | Review AWS infrastructure-as-code costs with evidence, savings assumptions, and trade-offs. |
+| [webapp-performance-code-review](skills/webapp-performance-code-review/SKILL.md) | Statically review web application source, configuration, and dependencies and produce a prioritized performance tuning report. |
 | [token-efficiency](skills/token-efficiency/SKILL.md) | Reduce unnecessary context, tool output, and response verbosity while preserving correctness and required checks. |
 
 ## Local skill links
@@ -33,7 +33,7 @@ claude --plugin-dir .
 Then invoke the included skill:
 
 ```text
-/tlephan-skills:aws-cost-optimization
+/tlephan-skills:aws-iac-cost-review
 ```
 
 ### Install from GitHub
@@ -73,7 +73,7 @@ cp -R .cursor-plugin skills README.md LICENSE ~/.cursor/plugins/local/tlephan-sk
 ```
 
 Run **Developer: Reload Window** in Cursor, then open **Customize** to confirm
-the skill is available. Invoke it in chat with `/aws-cost-optimization`.
+the skill is available. Invoke it in chat with `/aws-iac-cost-review`.
 Local plugin imports must be enabled by your organization if managed by a team.
 See [Cursor's local testing instructions](https://cursor.com/docs/plugins#test-plugins-locally).
 
