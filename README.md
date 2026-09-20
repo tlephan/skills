@@ -42,12 +42,48 @@ claude plugin validate .claude-plugin/plugin.json
 claude plugin validate .claude-plugin/marketplace.json
 ```
 
-## License
+## Cursor plugin
 
-[MIT](LICENSE) © 2026 tlephan.
+The `tlephan-skills` Cursor plugin uses the same `skills/` directory, with metadata
+in `.cursor-plugin/`. See the [Cursor plugin reference](https://cursor.com/docs/reference/plugins).
+
+### Try locally
+
+From the repository root, copy the plugin into Cursor's local plugin directory:
+
+```sh
+mkdir -p ~/.cursor/plugins/local/tlephan-skills
+cp -R .cursor-plugin skills README.md LICENSE ~/.cursor/plugins/local/tlephan-skills/
+```
+
+Run **Developer: Reload Window** in Cursor, then open **Customize** to confirm
+the skill is available. Invoke it in chat with `/aws-cost-optimization`.
+Local plugin imports must be enabled by your organization if managed by a team.
+See [Cursor's local testing instructions](https://cursor.com/docs/plugins#test-plugins-locally).
+
+### Distribution
+
+The `.cursor-plugin/marketplace.json` catalog exposes the repository as a plugin
+marketplace. After pushing these files, teams can add the repository as a team
+marketplace. For a public Cursor Marketplace listing, submit the repository at
+[Cursor Marketplace Publish](https://cursor.com/marketplace/publish); listing requires review.
+
+### Development
+
+Keep the shared plugin name, version, description, and license consistent between
+the Claude Code and Cursor manifests when releasing updates. New skills under
+`skills/` are discovered automatically by both plugins.
+
+Check Cursor manifest JSON syntax locally:
+
+```sh
+python3 -m json.tool .cursor-plugin/plugin.json > /dev/null
+python3 -m json.tool .cursor-plugin/marketplace.json > /dev/null
+```
 
 ## External awsome skills
 
 - Anthropic: [Anthropic Skills](https://github.com/anthropics/skills)
 - AWS: [Agent Toolkit for AWS](https://github.com/aws/agent-toolkit-for-aws/tree/main)
 - Draw.io: [drawio-skill — From Text to Professional Diagrams](https://github.com/Agents365-ai/drawio-skill)
+- Caveman: [Caveman - why use many token when few do trick](https://github.com/juliusbrussee/caveman)

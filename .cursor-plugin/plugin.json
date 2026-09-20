@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Curated agent skills for AI coding assistants.",
   "author": {
-    "name": "tlephan",
-    "url": "https://github.com/tlephan"
+    "name": "tlephan"
   },
+  "homepage": "https://github.com/tlephan/skills",
   "repository": "https://github.com/tlephan/skills",
   "license": "MIT",
   "keywords": ["skills", "aws", "infrastructure"]
