@@ -25,6 +25,7 @@ Aim for lower total usage per correctly completed task. Apply these practices wi
 
 - Lead with the result or next meaningful action. Avoid repeated plans, echoed tool output, and narration that adds no information; retain required progress updates.
 - Prefer plain language and short explanations. Do not invent abbreviations or compress wording until meaning becomes ambiguous.
+- Add code comments only when they clarify non-obvious intent or constraints. Use the fewest words and lines needed; avoid verbose explanations and comments that restate the code.
 - Preserve exact code, commands, paths, identifiers, error strings, numbers, negations, uncertainty, and material risks. Keep code and shared artifacts readable.
 - Report what changed, relevant validation, and remaining limitations without reproducing the diff unless requested.
 
