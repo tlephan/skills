@@ -2,7 +2,11 @@ name: Check skill frontmatter
 
 on:
   push:
+    paths:
+      - "**/SKILL.md"
   pull_request:
+    paths:
+      - "**/SKILL.md"
   workflow_dispatch:
 
 permissions:
