@@ -1,0 +1,73 @@
+name: Check skill frontmatter
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-skill-frontmatter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install YAML parser
+        run: python -m pip install PyYAML==6.0.3
+
+      - name: Validate skill frontmatter
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
+
+          import yaml
+
+          files = sorted(Path("skills").rglob("SKILL.md"))
+          errors = []
+          if not files:
+              errors.append("No skills/**/SKILL.md files found")
+
+          for path in files:
+              try:
+                  lines = path.read_text(encoding="utf-8").splitlines()
+                  if not lines or lines[0] != "---":
+                      raise ValueError("File must start with a YAML frontmatter delimiter (---)")
+                  try:
+                      end = lines.index("---", 1)
+                  except ValueError:
+                      raise ValueError("Missing closing frontmatter delimiter (---)") from None
+                  data = yaml.safe_load("\n".join(lines[1:end]))
+                  if not isinstance(data, dict):
+                      raise ValueError("Frontmatter must be a YAML mapping")
+                  name = data.get("name")
+                  if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
+                      raise ValueError("name must be a non-empty lowercase, hyphen-separated string")
+                  if name != path.parent.name:
+                      raise ValueError("name must match the skill directory name")
+                  description = data.get("description")
+                  if not isinstance(description, str) or not description.strip():
+                      raise ValueError("description must be a non-empty string")
+                  print(f"PASS {path}")
+              except (OSError, UnicodeError, ValueError, yaml.YAMLError) as exc:
+                  errors.append(f"{path}: {exc}")
+
+          if errors:
+              for error in errors:
+                  print(error, file=sys.stderr)
+              sys.exit(1)
+          print(f"Validated {len(files)} skill(s).")
+          PY
