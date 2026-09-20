@@ -1,6 +1,13 @@
 # Skills
 Awsome agent skills with curated skills, scripts, templates. etc. for AI coding agents.
 
+## Available skills
+
+| Skill | Purpose |
+|-------|---------|
+| [aws-cost-optimization](skills/aws-cost-optimization/SKILL.md) | Review AWS infrastructure costs with evidence, savings assumptions, and trade-offs. |
+| [token-efficiency](skills/token-efficiency/SKILL.md) | Reduce unnecessary context, tool output, and response verbosity while preserving correctness and required checks. |
+
 ## Claude Code plugin
 
 This repository packages its `skills/` directory as the `tlephan-skills` plugin.
