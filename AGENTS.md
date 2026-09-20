@@ -1,8 +1,7 @@
 # Repository Context
 
 This repository contains curated skills for AI coding agents. It is distributed
-as the `tlephan-skills` plugin for Claude Code and Cursor through `tlephan-marketplace` and is
-licensed under MIT. The current skill reviews AWS infrastructure costs in CDK,
+as the `tlephan-skills` plugin for Claude Code and Cursor through `tlephan-marketplace`. The current skill reviews AWS infrastructure costs in CDK,
 CloudFormation, and Terraform code.
 
 ## Layout
@@ -46,6 +45,6 @@ For documentation and skill changes, check frontmatter, relative links, and
 referenced files. Run `git diff --check` to catch whitespace errors.
 
 To manually try the plugin, launch `claude --plugin-dir .` from the repository
-root, then invoke `/tlephan-skills:aws-cost-optimization` in Claude Code.
+root, then invoke `/tlephan-skills:aws-iac-cost-review` in Claude Code.
 For Cursor, follow the local plugin installation steps in `README.md` and confirm
 the skill appears in Customize after reloading the window.

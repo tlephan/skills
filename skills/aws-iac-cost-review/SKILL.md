@@ -1,5 +1,5 @@
 ---
-name: aws-cost-optimization
+name: aws-iac-cost-review
 description: Review AWS infrastructure costs in CDK, CloudFormation, and Terraform code and produce prioritized recommendations with evidence, savings assumptions, and trade-offs.
 ---
 
