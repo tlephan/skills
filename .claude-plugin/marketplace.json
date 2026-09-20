@@ -1,0 +1,16 @@
+{
+  "name": "tlephan-marketplace",
+  "owner": {
+    "name": "tlephan"
+  },
+  "metadata": {
+    "description": "Curated agent skills maintained by tlephan."
+  },
+  "plugins": [
+    {
+      "name": "tlephan-skills",
+      "source": "./",
+      "description": "Curated agent skills for AI coding assistants, including AWS infrastructure cost optimization."
+    }
+  ]
+}

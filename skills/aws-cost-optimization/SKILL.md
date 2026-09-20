@@ -1,7 +1,6 @@
 ---
 name: aws-cost-optimization
 description: Review AWS infrastructure costs in CDK, CloudFormation, and Terraform code and produce prioritized recommendations with evidence, savings assumptions, and trade-offs.
-license: Internal. LICENSE.txt has complete terms
 ---
 
 # AWS Cost Optimization
