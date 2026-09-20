@@ -5,6 +5,7 @@ Use this guide when evaluating the skill or reporting savings. The goal is lower
 ## Comparison procedure
 
 1. Choose representative tasks with observable acceptance criteria: a localized bug fix, a change spanning callers and tests, and a diagnosis involving a long failure log. Include a small task where skill overhead may outweigh savings.
+   Include a large structured tool result and a long task spanning a handoff or compaction boundary. Check that filtering preserves decisive evidence and that resumed work retains constraints and completed verification without unnecessary rediscovery.
 2. Compare three conditions: no efficiency instruction, a simple "answer concisely" instruction, and this skill. Keep task prompts, repository snapshots, model, settings, tools, permissions, and acceptance criteria the same.
 3. Start each run in a fresh conversation and isolated working copy. Record the skill revision and effective instructions. Avoid loading this guide into the tested agent unless evaluating measurement work itself.
 4. Repeat each condition when feasible and vary run order. Record cache conditions; do not compare a warm-cache run with a cold-cache run as though they were equivalent.
@@ -16,12 +17,12 @@ Run only tasks and tools authorized for the evaluation. A benchmark does not its
 
 | Field | What to capture |
 |-------|-----------------|
-| Setup | Task, repository revision, skill revision, agent/model version, settings, condition, run ID |
-| Input usage | Provider-reported input tokens, including skill and tool-result overhead; cache categories where available |
+| Setup | Task, repository revision, skill revision, host and billing model, agent/model version, service tier, settings, condition, run ID |
+| Input usage | Provider-reported input tokens, including skill and tool-result overhead; uncached input, cache reads, and cache writes where available |
 | Output usage | Provider-reported output tokens; reasoning usage separately where exposed |
 | Other usage | Tool calls, retries, corrections, elapsed time, separately billed tools |
 | Outcome | Acceptance criteria passed, required checks completed, regressions or missing information |
-| Cost | Reported charge or estimate using dated rates and documented billing categories |
+| Cost | Reported charge or estimate using dated rates and documented billing categories, including applicable cache-write/storage charges and host surcharges |
 
 Use the provider's definitions: cached tokens or reasoning tokens may already be included in another reported total. Avoid double-counting. Missing telemetry is unknown, not zero. Character counts, word counts, and counts from a different tokenizer are only proxies and must be labeled as such.
 
@@ -31,6 +32,7 @@ Use the provider's definitions: cached tokens or reasoning tokens may already be
 - Compare paired runs and report sample size, variation, completion rate, and absolute usage alongside percentages. Do not select only the best run.
 - To summarize cost per successful completion, divide total measured cost across all attempts by successful completions; also report failures. The ratio is undefined when none succeed.
 - Shorter final replies alone do not establish lower total usage. More searches, missed context, or extra correction turns can erase the savings.
+- For handoff or compaction runs, include summary generation, cache effects, and subsequent recovery work. Compare total task cost rather than context size or cache-hit rate alone.
 - Claim monetary savings only with reported charges or documented rates for the relevant billing model. Token reductions do not automatically reduce subscription fees or request-based charges.
 - Treat any measured gain as specific to the tested workload, agent, model, and settings. Do not promise a universal percentage or unchanged quality from a small sample.
 
