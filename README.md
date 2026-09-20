@@ -1,5 +1,5 @@
-# skills
-Awsome agent kit with curated plugins, skills, scripts, templates. etc.
+# Skills
+Awsome agent kit with curated skills, scripts, templates. etc for AI coding agents.
 
 ## External awsome skills
 
