@@ -7,7 +7,7 @@ Awsome agent skills with curated skills, scripts, templates. etc. for AI coding 
 |-------|---------|
 | [aws-iac-cost-review](skills/aws-iac-cost-review/SKILL.md) | Review AWS infrastructure-as-code costs with evidence, savings assumptions, and trade-offs. |
 | [performance-code-review](skills/performance-code-review/SKILL.md) | Statically review web application source, configuration, and dependencies and produce a prioritized performance tuning report. |
-| [software-architecture-code-review](skills/software-architecture-code-review/SKILL.md) | Review code structure and implemented system behavior with evidence-based architecture characteristic ratings using static source-code analysis only. |
+| [architecture-code-review](skills/architecture-code-review/SKILL.md) | Review code structure and implemented system behavior with evidence-based architecture characteristic ratings using static source-code analysis only. |
 | [token-efficiency](skills/token-efficiency/SKILL.md) | Reduce unnecessary context, tool output, and response verbosity while preserving correctness and required checks. |
 
 ## Local skill links

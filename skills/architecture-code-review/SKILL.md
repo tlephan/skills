@@ -1,5 +1,5 @@
 ---
-name: software-architecture-code-review
+name: architecture-code-review
 description: Review implemented software architecture and system design using static source-code analysis only, with evidence-based ratings for architecture characteristics, boundaries, dependencies, data flows, consistency, concurrency, failure handling, and change isolation. Use for repository-based architecture or system design audits; excludes greenfield design and runtime audits.
 ---
 
@@ -94,7 +94,7 @@ label inferred edges and distinguish module boundaries from process boundaries.
 
 Use [report-template.md](references/report-template.md). Save to the user's chosen
 path or repository report convention; otherwise use
-`software-architecture-code-review.md` at the project root. Preserve existing reports
+`architecture-code-review.md` at the project root. Preserve existing reports
 by choosing an unused dated filename. Return the report in the response if writing
 is unavailable or the user requests an inline review.
 
