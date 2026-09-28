@@ -103,5 +103,7 @@ python3 -m json.tool .cursor-plugin/marketplace.json > /dev/null
 
 - Anthropic: [Anthropic Skills](https://github.com/anthropics/skills)
 - AWS: [Agent Toolkit for AWS](https://github.com/aws/agent-toolkit-for-aws/tree/main)
+- Oracle technologies (db, oci, graal, fusion,. etc): [Oracle Skills](https://github.com/oracle/skills)
+- PostgreSQL skills from Microsoft: [Postgres Skills](https://github.com/microsoft/postgres-skills)
 - Draw.io: [drawio-skill — From Text to Professional Diagrams](https://github.com/Agents365-ai/drawio-skill)
 - Caveman: [Caveman - why use many token when few do trick](https://github.com/juliusbrussee/caveman)
