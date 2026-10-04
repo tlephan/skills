@@ -1,0 +1,32 @@
+<!-- template: risk · 3x3 likelihood x impact grid (cells: l1 low, l2 medium, l3 high) + owners for the top risks -->
+<section class="slide">
+  <header>
+    <div class="kicker">Risks · Cut-over</div>
+    <h2>Two high risks need named owners before December</h2>
+  </header>
+  <div class="body split" style="--cols:3fr 2fr">
+    <div class="risk fill">
+      <div class="ax y" style="grid-row:1 / 4">Likelihood →</div>
+      <div class="cell l2"></div>
+      <div class="cell l3"><span class="chip">R2 PSP sandbox delay</span></div>
+      <div class="cell l3"><span class="chip">R1 Peak-season load</span></div>
+      <div class="cell l1"><span class="chip">R5 Flag debt</span></div>
+      <div class="cell l2"><span class="chip">R4 Data backfill lag</span></div>
+      <div class="cell l3"></div>
+      <div class="cell l1"></div>
+      <div class="cell l1"></div>
+      <div class="cell l2"><span class="chip">R3 Chargeback edge cases</span></div>
+      <div></div>
+      <div class="ax" style="grid-column:2 / 5">Impact →</div>
+    </div>
+    <table class="data compact">
+      <thead><tr><th>Risk</th><th>Mitigation</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td>2× peak load test, Nov 10</td><td><span class="tag bad">NONE</span></td></tr>
+        <tr><td>R2</td><td>Escalate via vendor exec sponsor</td><td><span class="tag bad">NONE</span></td></tr>
+        <tr><td>R3</td><td>Shadow-run 4 weeks</td><td>T. Nguyen</td></tr>
+        <tr><td>R4</td><td>Parallel backfill workers</td><td>A. Silva</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

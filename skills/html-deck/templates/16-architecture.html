@@ -1,0 +1,21 @@
+<!-- template: architecture · boxes & arrows on a CSS grid; data-links draws labeled connectors (see references/diagrams.md for the link syntax) -->
+<section class="slide">
+  <header>
+    <div class="kicker">Architecture · Target state</div>
+    <h2>Target state takes the legacy monolith off the payment path</h2>
+  </header>
+  <div class="body">
+    <div class="diagram fill" style="grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)"
+         data-links="web -> gw : HTTPS; app -> gw : HTTPS; gw -> order : gRPC; order -> pay : authorize; order => bus : OrderPlaced; pay -> db : writes; bus --> legacy : nightly sync">
+      <div class="group" style="grid-column:2 / 4;grid-row:2 / 4"><b>Kubernetes · EU + US</b></div>
+      <div class="node" data-id="web" style="grid-column:1;grid-row:1"><i-monitor ico/><div><b>Web checkout</b><span>62% of orders</span></div></div>
+      <div class="node" data-id="app" style="grid-column:1;grid-row:3"><i-smartphone ico/><div><b>Mobile apps</b><span>38% of orders</span></div></div>
+      <div class="node accent" data-id="gw" style="grid-column:2;grid-row:2"><i-shield ico/><div><b>API gateway</b><span>Auth · rate limit</span></div></div>
+      <div class="node" data-id="order" style="grid-column:3;grid-row:2"><i-box ico/><div><b>Order service</b><span>Go · 6 pods</span></div></div>
+      <div class="node new" data-id="pay" style="grid-column:3;grid-row:3"><i-dollar ico="hot"/><div><b>Payment service</b><span>Replaces monolith module</span></div></div>
+      <div class="node" data-id="bus" style="grid-column:4;grid-row:2"><i-layers ico="alt"/><div><b>Event bus</b><span>Kafka</span></div></div>
+      <div class="node" data-id="db" style="grid-column:4;grid-row:3"><i-database ico/><div><b>Payments DB</b><span>Postgres, PCI zone</span></div></div>
+      <div class="node ext" data-id="legacy" style="grid-column:4;grid-row:1"><i-server ico="ghost"/><div><b>Legacy monolith</b><span>Read-only from Q1</span></div></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<!-- template: onepage/case-study · software engineering case study: the outcome, where the time went, the approach, the results over time, the lessons. Areas: kpis / challenge / approach / results / lessons -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Case study · Orders platform</div>
+    <div class="op-meta">
+      <span class="tag ok"><i-check-circle/>Delivered</span>
+      <span><i-calendar/>Jan–Sep 2026</span>
+      <span><i-users/>Orders team · 9 engineers</span>
+    </div>
+    <h2>Strangling the orders monolith cut lead time from 9 days to 1, with no code freeze</h2>
+  </header>
+  <div class="op numbered" style="grid-template-areas:'kpis kpis kpis' 'challenge approach approach' 'results results lessons';grid-template-columns:1fr 1fr 0.95fr;grid-template-rows:auto minmax(0,0.9fr) minmax(0,1.3fr)">
+    <div class="kpis" style="grid-area:kpis">
+      <div class="kpi"><div class="label">Lead time for changes</div><div class="value">1<small>day</small></div><div class="foot"><span class="delta good"><i-arrow-down/>from 9 days</span></div></div>
+      <div class="kpi"><div class="label">Deploys per week</div><div class="value">25</div><div class="foot"><span class="delta good"><i-arrow-up/>from 2</span></div></div>
+      <div class="kpi"><div class="label">Change failure rate</div><div class="value">6<small>%</small></div><div class="foot"><span class="delta good"><i-arrow-down/>from 18%</span></div></div>
+      <div class="kpi"><div class="label">Time to restore</div><div class="value">35<small>min</small></div><div class="foot"><span class="delta good"><i-arrow-down/>from 4 hours</span></div></div>
+    </div>
+    <div class="panel" style="grid-area:challenge">
+      <h3><i-alert/>Challenge</h3>
+      <p class="claim">A change waited 9 days, mostly in queues</p>
+      <div class="stack gap-s vmid">
+        <div class="meter-row"><b>Manual regression</b><span class="meter warn" style="--v:44"></span><em>4 d</em></div>
+        <div class="meter-row"><b>Release approval</b><span class="meter" style="--v:22"></span><em>2 d</em></div>
+        <div class="meter-row"><b>Merge queue</b><span class="meter" style="--v:22"></span><em>2 d</em></div>
+        <div class="meter-row"><b>Build and deploy</b><span class="meter" style="--v:11"></span><em>1 d</em></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:approach">
+      <h3><i-workflow/>Approach<span class="tag accent">Strangler fig</span></h3>
+      <p class="claim">Move one capability at a time behind an edge router</p>
+      <div class="flow vmid">
+        <div class="step"><i-route/>Route<small>Edge router first</small></div>
+        <div class="step"><i-box/>Extract<small>One capability a quarter</small></div>
+        <div class="step hot"><i-database/>Dual-write<small>Then backfill</small></div>
+        <div class="step"><i-sliders/>Shift<small>Canary 1% → 100%</small></div>
+        <div class="step dark"><i-check-circle/>Retire<small>Delete old code</small></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:results">
+      <h3><i-trend-down/>Results</h3>
+      <p class="claim">Lead time fell each time a capability left the monolith</p>
+      <figure class="chart">
+        <figcaption>Median lead time for changes, days <small>2026</small></figcaption>
+        <script data-chart="line">{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"series":[{"name":"Orders","values":[9,8.6,7.1,6.4,4.5,3.8,2.4,1.6,1]}],"suffix":" d","min":0,"max":10,"target":2,"targetLabel":"Goal","annotations":[{"x":"Mar","label":"Cart moved"},{"x":"Jul","label":"Payments moved"}]}</script>
+      </figure>
+    </div>
+    <div class="panel solid" style="grid-area:lessons">
+      <h3><i-lightbulb/>Lessons</h3>
+      <p class="claim">Three practices we now reuse on every migration</p>
+      <ol class="steps">
+        <li><b>Route first, extract second</b><span>Every cut stays reversible</span></li>
+        <li><b>Dual-write before moving data</b><span>No big-bang cut-over</span></li>
+        <li><b>Delete old code in the same sprint</b><span>The monolith shrinks instead of forking</span></li>
+      </ol>
+    </div>
+  </div>
+  <aside class="notes">Lead with the outcome: lead time from 9 days to 1, four times the deploys, a third of the failures. The challenge panel shows the 9 days were mostly waiting, not building. The approach was the strangler fig: route at the edge, extract one capability, dual-write, shift traffic by canary, delete the old code. Lead time dropped each time a capability moved. Close on the three lessons other teams can reuse.</aside>
+</section>

@@ -1,0 +1,24 @@
+<!-- template: references · appendix, after the closing slide: sources ranked by one stated measure (slides citing them, or citation count with its source and date in .note) · link + year, full reference in the title tooltip · tag = the part of the story it shapes -->
+<section class="slide">
+  <header>
+    <div class="kicker">Appendix · References · Sources behind the plan</div>
+    <h2>Eight sources back the plan; DORA research and SRE practice carry most of it</h2>
+  </header>
+  <div class="body vcenter">
+    <table class="data refs">
+      <thead><tr><th style="width:40%">Source</th><th style="width:34%">Shapes</th><th>Slides citing it</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://dora.dev/research/" target="_blank" rel="noopener" title="DORA. Accelerate State of DevOps Report 2024. Google Cloud, 2024">State of DevOps report</a> <span class="muted small">2024</span></td><td><span class="tag accent">Delivery</span>Four key metrics</td><td><div class="meter-row"><span class="meter" style="--v:100"></span><em>6</em></div></td></tr>
+        <tr><td><a href="https://sre.google/sre-book/table-of-contents/" target="_blank" rel="noopener" title="Beyer, Jones, Petoff, Murphy. Site Reliability Engineering. O'Reilly, 2016">Site Reliability Engineering</a> <span class="muted small">2016</span></td><td><span class="tag info">Reliability</span>SLOs and error budgets</td><td><div class="meter-row"><span class="meter" style="--v:83.3"></span><em>5</em></div></td></tr>
+        <tr><td><a href="https://itrevolution.com/product/accelerate/" target="_blank" rel="noopener" title="Forsgren, Humble, Kim. Accelerate: The Science of Lean Software and DevOps. IT Revolution, 2018">Accelerate</a> <span class="muted small">2018</span></td><td><span class="tag accent">Delivery</span>Trunk-based delivery</td><td><div class="meter-row"><span class="meter" style="--v:66.7"></span><em>4</em></div></td></tr>
+        <tr><td><a href="https://martinfowler.com/bliki/StranglerFigApplication.html" target="_blank" rel="noopener" title="Fowler. StranglerFigApplication. martinfowler.com, 2004">Strangler fig application</a> <span class="muted small">2004</span></td><td><span class="tag hot">Migration</span>Cut-over pattern</td><td><div class="meter-row"><span class="meter" style="--v:66.7"></span><em>4</em></div></td></tr>
+        <tr><td><a href="https://pragprog.com/titles/mnee2/release-it-second-edition/" target="_blank" rel="noopener" title="Nygard. Release It! Design and Deploy Production-Ready Software, 2nd ed. Pragmatic Bookshelf, 2018">Release It!</a> <span class="muted small">2018</span></td><td><span class="tag info">Reliability</span>Circuit breakers</td><td><div class="meter-row"><span class="meter" style="--v:50"></span><em>3</em></div></td></tr>
+        <tr><td><a href="https://wiki.example.com/postmortems/2026-07-sev1" target="_blank" rel="noopener" title="Platform Engineering. Sev1 postmortem: checkout outage, 14 Jul 2026. Internal wiki">Q3 Sev1 postmortem</a> <span class="muted small">2026</span></td><td><span class="tag">Internal</span>Detection gap</td><td><div class="meter-row"><span class="meter" style="--v:33.3"></span><em>2</em></div></td></tr>
+        <tr><td><a href="https://wiki.example.com/perf/2026-09-checkout" target="_blank" rel="noopener" title="Performance team. Checkout load test, September 2026. Internal wiki">Checkout load test</a> <span class="muted small">2026</span></td><td><span class="tag">Internal</span>Capacity headroom</td><td><div class="meter-row"><span class="meter" style="--v:33.3"></span><em>2</em></div></td></tr>
+        <tr><td><a href="https://wiki.example.com/adr/014" target="_blank" rel="noopener" title="Payments team. ADR-014: payments cut-over behind a feature flag. Internal wiki, 2026">ADR-014 payments flag</a> <span class="muted small">2026</span></td><td><span class="tag">Internal</span>Rollback plan</td><td><div class="meter-row"><span class="meter" style="--v:16.7"></span><em>1</em></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Ranked by the number of slides in this deck that cite each source. Hover a title for the full reference.</p>
+  <aside class="notes">Five external sources and three internal ones. DORA and Accelerate set the delivery metrics on the results slides; the SRE book and Release It! set the reliability targets; the strangler fig pattern is the migration plan. The internal postmortem, load test and ADR-014 back the Q4 asks.</aside>
+</section>

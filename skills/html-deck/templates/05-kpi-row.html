@@ -1,0 +1,45 @@
+<!-- template: kpi-row · 3-4 stat tiles (value, delta, sparkline, status) + the one chart that explains the miss -->
+<section class="slide">
+  <header>
+    <div class="kicker">Results · Scorecard</div>
+    <h2>Three of four Q3 targets met; EU latency is the one miss</h2>
+  </header>
+  <div class="body">
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label">Checkout conversion</div>
+        <div class="value">63.6<small>%</small></div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>2.4 pts vs Q2</span><span class="spark" data-values="61.2,61,61.5,62.4,62.9,63.1,63.4,63.5,63.6"></span></div>
+        <div class="sub"><span class="tag ok">MET</span> target 63.0%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">P1/P2 incidents</div>
+        <div class="value">3</div>
+        <div class="foot"><span class="delta good"><i-arrow-down/>70% vs Q2</span><span class="spark" data-values="11,9,10,7,6,4,4,3"></span></div>
+        <div class="sub"><span class="tag ok">MET</span> target ≤ 5</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Deploys per week</div>
+        <div class="value">41</div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>3.4× vs Q2</span><span class="spark" data-values="12,14,15,22,27,31,36,41"></span></div>
+        <div class="sub"><span class="tag ok">MET</span> target 30</div>
+      </div>
+      <div class="kpi">
+        <div class="label">p95 latency, EU</div>
+        <div class="value">480<small>ms</small></div>
+        <div class="foot"><span class="delta bad"><i-arrow-up/>60 ms vs Q2</span><span class="spark" data-values="410,405,420,430,445,460,470,480"></span></div>
+        <div class="sub"><span class="tag bad">MISSED</span> target 400 ms</div>
+      </div>
+    </div>
+    <div class="split fill" style="--cols:3fr 2fr">
+      <figure class="chart">
+        <figcaption>p95 checkout latency by region, ms <small>September 2026</small></figcaption>
+        <script data-chart="bar">{"labels":["EU","APAC","LATAM","US East","US West"],"values":[480,390,370,310,295],"suffix":" ms","highlight":["EU"],"target":400}</script>
+      </figure>
+      <div class="takeaways">
+        <div class="takeaway"><i-database ico="bad"/><div><b>Root cause: cross-region DB reads</b><span>EU orders still read from the US primary</span></div></div>
+        <div class="takeaway"><i-zap ico/><div><b>Fix: EU read replica, Oct 20</b><span>Projected p95 ≈ 340 ms</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>

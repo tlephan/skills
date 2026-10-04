@@ -1,0 +1,17 @@
+<!-- template: heatmap · a grid of magnitudes (rows x columns) on one sequential hue; call out the pattern beside it -->
+<section class="slide">
+  <header>
+    <div class="kicker">Quality · Defects</div>
+    <h2>Escaped defects cluster in payments during release sprints</h2>
+  </header>
+  <div class="body split" style="--cols:3fr 1fr">
+    <figure class="chart">
+      <figcaption>Escaped defects by domain and sprint <small>Release sprints: S15, S18, S21</small></figcaption>
+      <script data-chart="heatmap">{"rows":["Payments","Cart","Search","Accounts","Shipping"],"cols":["S14","S15","S16","S17","S18","S19","S20","S21"],"values":[[3,11,4,3,12,4,2,9],[2,5,2,1,4,2,1,3],[1,2,1,1,2,0,1,1],[1,3,1,2,3,1,1,2],[2,4,2,2,5,2,1,3]],"scaleLabel":"defects"}</script>
+    </figure>
+    <div class="takeaways">
+      <div class="takeaway"><i-bug ico="bad"/><div><b>Payments: 3.4× baseline</b><span>in release sprints</span></div></div>
+      <div class="takeaway"><i-flask ico/><div><b>Contract tests first</b><span>Gateway stubs by Oct 31</span></div></div>
+    </div>
+  </div>
+</section>

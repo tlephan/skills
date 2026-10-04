@@ -1,0 +1,12 @@
+<!-- template: sequence · who calls whom, in order; [from, to, label, "reply" | "em"]; highlight the actor under discussion -->
+<section class="slide">
+  <header>
+    <div class="kicker">Architecture · Payment flow</div>
+    <h2>Authorization takes 8 calls; only the 3-D Secure step is external</h2>
+  </header>
+  <div class="body">
+    <figure class="seq fill">
+      <script data-diagram="sequence">{"actors":["Shopper","Checkout UI","Order service","Payment service","PSP"],"highlight":["Payment service"],"steps":[["Shopper","Checkout UI","Place order"],["Checkout UI","Order service","POST /orders"],["Order service","Payment service","authorize(amount)"],["Payment service","PSP","3-D Secure challenge","em"],["PSP","Payment service","approved + token","reply"],["Payment service","Order service","auth reference","reply"],["Order service","Order service","persist, emit OrderPlaced"],["Order service","Checkout UI","201 Created","reply"]]}</script>
+    </figure>
+  </div>
+</section>

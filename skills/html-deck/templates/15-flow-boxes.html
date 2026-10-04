@@ -1,0 +1,24 @@
+<!-- template: flow-boxes · hop-by-hop path with labeled arrows (protocol / data moved) + where the time goes -->
+<section class="slide">
+  <header>
+    <div class="kicker">Architecture · Request path</div>
+    <h2>An order crosses four hops; payment authorization is 58% of the time</h2>
+  </header>
+  <div class="body">
+    <div class="flow boxes">
+      <div class="box"><i-monitor ico/><b>Checkout UI</b><span>React, edge-cached</span></div>
+      <div class="arrow">HTTPS</div>
+      <div class="box"><i-shield ico/><b>API gateway</b><span>Auth, rate limits</span></div>
+      <div class="arrow">gRPC</div>
+      <div class="box"><i-box ico/><b>Order service</b><span>Validates, prices</span></div>
+      <div class="arrow">sync call</div>
+      <div class="box hot"><i-dollar ico="hot"/><b>Payment service</b><span>PSP authorization</span></div>
+      <div class="arrow">event</div>
+      <div class="box alt"><i-layers ico="alt"/><b>Event bus</b><span>Fulfilment, email</span></div>
+    </div>
+    <figure class="chart fill">
+      <figcaption>Where checkout latency goes, ms per hop</figcaption>
+      <script data-chart="bar">{"labels":["p50","p95","p99"],"series":[{"name":"UI + network","values":[48,90,140]},{"name":"Gateway","values":[22,35,60]},{"name":"Order service","values":[52,95,150]},{"name":"Payment authorization","values":[168,260,520]}],"stacked":true,"suffix":" ms","barWidth":32}</script>
+    </figure>
+  </div>
+</section>

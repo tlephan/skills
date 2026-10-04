@@ -1,0 +1,75 @@
+<!-- template: onepage/executive-summary · decision brief on one slide: the answer, 4 KPIs, two proof panels, the plan, the ask. Areas: kpis / trend / miss / plan / ask -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Checkout platform · Q3 2026 review</div>
+    <div class="op-meta">
+      <span class="tag ok"><i-check-circle/>On track</span>
+      <span><i-calendar/>30 Sep 2026</span>
+      <span><i-users/>Platform Engineering</span>
+    </div>
+    <h2>Checkout hit 3 of 4 Q3 targets; $420K finishes the cut-over by March</h2>
+  </header>
+  <div class="op numbered" style="grid-template-areas:'kpis kpis kpis' 'trend miss ask' 'plan plan ask';grid-template-columns:1.2fr 1fr 0.9fr;grid-template-rows:auto minmax(0,1.4fr) minmax(0,1fr)">
+    <div class="kpis" style="grid-area:kpis">
+      <div class="kpi">
+        <div class="label">Checkout conversion</div>
+        <div class="value">63.6<small>%</small></div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>2.4 pts vs Q2</span><span class="spark" data-values="61.2,61,61.5,62.4,62.9,63.1,63.4,63.6"></span></div>
+      </div>
+      <div class="kpi">
+        <div class="label">P1/P2 incidents</div>
+        <div class="value">3</div>
+        <div class="foot"><span class="delta good"><i-arrow-down/>70% vs Q2</span><span class="spark" data-values="11,9,10,7,6,4,4,3"></span></div>
+      </div>
+      <div class="kpi">
+        <div class="label">Deploys per week</div>
+        <div class="value">41</div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>3.4× vs Q2</span><span class="spark" data-values="12,14,15,22,27,31,36,41"></span></div>
+      </div>
+      <div class="kpi">
+        <div class="label">p95 latency, EU</div>
+        <div class="value">480<small>ms</small></div>
+        <div class="foot"><span class="delta bad"><i-arrow-up/>target 400 ms</span><span class="spark" data-values="410,405,420,430,445,460,470,480"></span></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:trend">
+      <h3><i-trend-up/>Result</h3>
+      <p class="claim">Conversion up 2.4 pts since the new flow launched</p>
+      <figure class="chart">
+        <figcaption>Checkout conversion, % <small>monthly, 2026</small></figcaption>
+        <script data-chart="line">{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"values":[61.0,61.2,61.1,61.4,61.2,62.4,62.9,63.3,63.6],"suffix":"%","min":60,"max":64,"target":63,"annotations":[{"x":"Jun","label":"New flow"}]}</script>
+      </figure>
+      <aside class="notes">Conversion sat near 61% until the new flow shipped in June, then climbed every month. September closed at 63.6%, above the 63% target.</aside>
+    </div>
+    <div class="panel" style="grid-area:miss">
+      <h3><i-alert/>The miss</h3>
+      <p class="claim">EU misses 400 ms: orders still read from the US</p>
+      <figure class="chart">
+        <figcaption>p95 checkout latency, ms <small>Sep 2026</small></figcaption>
+        <script data-chart="bar">{"labels":["EU","APAC","LATAM","US East","US West"],"values":[480,390,370,310,295],"suffix":" ms","highlight":["EU"],"target":400}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:plan">
+      <h3><i-route/>Plan</h3>
+      <p class="claim">EU replica fixes latency in October; payments ramps after the freeze</p>
+      <div class="timeline vmid">
+        <div class="ms done"><div class="when">Sep 2026</div><div class="pin"></div><div class="what">Order service live</div><div class="desc">Orders off the monolith</div></div>
+        <div class="ms now"><div class="when">Oct 2026</div><div class="pin"></div><div class="what">EU read replica</div><div class="desc">p95 ≈ 340 ms</div></div>
+        <div class="ms"><div class="when">Dec 2026</div><div class="pin"></div><div class="what">Payments at 50%</div><div class="desc">After the peak freeze</div></div>
+        <div class="ms"><div class="when">Feb 2027</div><div class="pin"></div><div class="what">Refunds migrated</div><div class="desc">Last write path</div></div>
+        <div class="ms"><div class="when">Mar 2027</div><div class="pin"></div><div class="what">Monolith retired</div><div class="desc">Cut-over complete</div></div>
+      </div>
+    </div>
+    <div class="panel solid" style="grid-area:ask">
+      <h3><i-flag/>Decisions today</h3>
+      <p class="claim">Approve the Q4 cut-over plan</p>
+      <ol class="steps">
+        <li><b>Approve $420K cut-over budget</b><span>Finance · today</span></li>
+        <li><b>Confirm freeze 2–13 Dec</b><span>CTO · by Oct 6</span></li>
+        <li><b>Name one payments owner</b><span>VP Eng · by Oct 10</span></li>
+      </ol>
+      <div class="hero push"><div class="value">$2.1M<small>/yr</small></div><div class="label">saved once the monolith retires; each month of delay costs $175K</div></div>
+    </div>
+  </div>
+  <aside class="notes">Answer first: three of four targets met, one decision needed. Walk the page in order: the numbers, the result, the one miss and its fix, the plan, then the three decisions.</aside>
+</section>

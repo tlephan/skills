@@ -1,0 +1,74 @@
+<!-- template: onepage/project-status · program status report: milestones, workstream RAG, budget burn, risks, decisions needed. Areas: ms / ws / budget / risk / ask -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Checkout re-platform · Status, week 39</div>
+    <div class="op-meta">
+      <span class="tag warn"><i-alert/>At risk</span>
+      <span><i-calendar/>30 Sep 2026</span>
+      <span><i-user/>Program lead: A. Chen</span>
+    </div>
+    <h2>March cut-over holds, but payments is now the critical path</h2>
+  </header>
+  <div class="op" style="grid-template-areas:'ms ms ms ask' 'ws ws budget ask' 'burn burn risk ask';grid-template-columns:1fr 1fr 0.92fr 0.9fr;grid-template-rows:auto minmax(0,1.3fr) minmax(0,1fr)">
+    <div class="panel" style="grid-area:ms">
+      <h3><i-flag/>Milestones<span class="tag ok">2 of 6 done, on time</span></h3>
+      <div class="timeline">
+        <div class="ms done"><div class="when">Jun</div><div class="pin"></div><div class="what">New checkout flow</div></div>
+        <div class="ms done"><div class="when">Sep</div><div class="pin"></div><div class="what">Order service live</div></div>
+        <div class="ms now"><div class="when">Oct</div><div class="pin"></div><div class="what">EU read replica</div></div>
+        <div class="ms"><div class="when">Dec</div><div class="pin"></div><div class="what">Payments at 50%</div></div>
+        <div class="ms"><div class="when">Feb</div><div class="pin"></div><div class="what">Refunds migrated</div></div>
+        <div class="ms"><div class="when">Mar</div><div class="pin"></div><div class="what">Monolith retired</div></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:ws">
+      <h3><i-list/>Workstreams</h3>
+      <p class="claim">Payments is 20% done and blocked on PSP sandbox access</p>
+      <table class="data">
+        <thead><tr><th>Workstream</th><th>Owner</th><th style="width:28%">Progress</th><th>Next step</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Order service</td><td>Borealis</td><td><div class="meter-row"><span class="meter ok" style="--v:100"></span><em>100%</em></div></td><td>Done Sep 12</td><td><span class="tag ok">DONE</span></td></tr>
+          <tr><td>EU replica</td><td>Cirrus</td><td><div class="meter-row"><span class="meter" style="--v:60"></span><em>60%</em></div></td><td>Load test Oct 14</td><td><span class="tag ok">ON TRACK</span></td></tr>
+          <tr><td>Data backfill</td><td>Delta</td><td><div class="meter-row"><span class="meter" style="--v:64"></span><em>64%</em></div></td><td>41 TB by Jan 15</td><td><span class="tag ok">ON TRACK</span></td></tr>
+          <tr class="hl"><td>Payments</td><td>Echo</td><td><div class="meter-row"><span class="meter bad" style="--v:20"></span><em>20%</em></div></td><td>PSP sandbox Oct 10</td><td><span class="tag bad">BLOCKED</span></td></tr>
+          <tr><td>Refunds</td><td>Echo</td><td><div class="meter-row"><span class="meter warn" style="--v:10"></span><em>10%</em></div></td><td>Design review Nov 3</td><td><span class="tag warn">AT RISK</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel" style="grid-area:budget">
+      <h3><i-dollar/>Budget</h3>
+      <p class="claim">Spend runs 3 pts ahead of plan</p>
+      <figure class="chart">
+        <script data-chart="gauge">{"value":73,"suffix":"%","target":70,"targetLabel":"Plan","label":"of $2.0M spent","tone":"warn"}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:burn">
+      <h3><i-chart-line/>Delivery<span class="tag warn">66% vs 70% plan</span></h3>
+      <figure class="chart">
+        <figcaption>Scope delivered, % <small>Mar – Sep 2026</small></figcaption>
+        <script data-chart="line">{"labels":["Mar","Apr","May","Jun","Jul","Aug","Sep"],"series":[{"name":"Delivered","values":[9,18,28,37,47,57,66]},{"name":"Plan","values":[10,20,30,40,50,60,70],"color":"c-total","dashed":true}],"suffix":"%","min":0,"max":80}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:risk">
+      <h3><i-shield/>Risks</h3>
+      <p class="claim">One high risk: PSP sandbox access</p>
+      <div class="risk fill">
+        <div class="ax y" style="grid-row:1 / 4">Likelihood</div>
+        <div class="cell l2"></div><div class="cell l3"></div><div class="cell l3"><span class="chip">R1 PSP sandbox</span></div>
+        <div class="cell l1"></div><div class="cell l2"><span class="chip">R3 Backfill</span></div><div class="cell l3"><span class="chip">R2 Peak freeze</span></div>
+        <div class="cell l1"></div><div class="cell l1"></div><div class="cell l2"></div>
+        <div></div><div class="ax" style="grid-column:2 / 5">Impact</div>
+      </div>
+    </div>
+    <div class="panel solid" style="grid-area:ask">
+      <h3><i-flag/>Decisions needed</h3>
+      <p class="claim">Two decisions unblock payments this month</p>
+      <ol class="steps">
+        <li><b>Escalate PSP sandbox access</b><span>CTO to PSP exec · by Oct 3</span></li>
+        <li><b>Add two payments contractors</b><span>$180K from contingency · VP Eng · by Oct 10</span></li>
+      </ol>
+      <div class="hero push"><div class="value">Mar 2027</div><div class="label">cut-over holds if both decisions land by Oct 10. Next review Oct 14.</div></div>
+    </div>
+  </div>
+  <aside class="notes">Status is amber, not red: the date holds today. It turns red on Oct 10 if PSP sandbox access is still missing, because payments then cannot reach 50% before the December freeze.</aside>
+</section>

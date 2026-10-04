@@ -1,0 +1,75 @@
+<!-- template: onepage/business-case · investment proposal: financial KPIs, the problem, payback curve, options compared, plan, the ask. Areas: kpis / problem / payback / options / plan / ask -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Checkout platform · Investment proposal</div>
+    <div class="op-meta">
+      <span class="tag accent"><i-briefcase/>Proposal</span>
+      <span><i-calendar/>30 Sep 2026</span>
+      <span><i-user/>CTO office</span>
+    </div>
+    <h2>Retiring the monolith pays back in 14 months and saves $2.1M a year</h2>
+  </header>
+  <div class="op" style="grid-template-areas:'kpis kpis kpis' 'problem payback options' 'plan plan ask';grid-template-columns:0.95fr 1.1fr 1.1fr;grid-template-rows:auto minmax(0,1.1fr) minmax(0,1fr)">
+    <div class="kpis" style="grid-area:kpis">
+      <div class="kpi"><div class="label">One-off investment</div><div class="value">$1.2<small>M</small></div><div class="sub">Q4 2026 – Q1 2027</div></div>
+      <div class="kpi"><div class="label">Run-cost saving</div><div class="value">$2.1<small>M/yr</small></div><div class="sub">62% of today's $3.4M</div></div>
+      <div class="kpi"><div class="label">Payback</div><div class="value">14<small>months</small></div><div class="sub">cash-positive from Q4 2027</div></div>
+      <div class="kpi"><div class="label">3-year NPV</div><div class="value">$3.9<small>M</small></div><div class="sub">at a 10% discount rate</div></div>
+    </div>
+    <div class="panel" style="grid-area:problem">
+      <h3><i-alert/>Problem</h3>
+      <p class="claim">The monolith costs $3.4M a year to run</p>
+      <figure class="chart">
+        <figcaption>Annual run cost, $M</figcaption>
+        <script data-chart="donut">{"labels":["Hosting","Licenses","On-call","Incidents"],"values":[1.5,0.9,0.6,0.4],"prefix":"$","suffix":"M","decimals":1,"showPercent":false,"center":{"value":"$3.4M","label":"per year"}}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:payback">
+      <h3><i-trend-up/>Payback</h3>
+      <p class="claim">Cash-positive from Q4 2027</p>
+      <figure class="chart">
+        <figcaption>Cumulative net benefit, $M</figcaption>
+        <script data-chart="area">{"labels":["Q4 26","Q1 27","Q2 27","Q3 27","Q4 27","Q1 28","Q2 28","Q3 28"],"values":[-0.4,-0.9,-0.6,-0.1,0.4,0.9,1.5,2.0],"prefix":"$","suffix":"M","decimals":1,"annotations":[{"x":"Q4 27","label":"Payback"}]}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:options">
+      <h3><i-scale/>Options</h3>
+      <p class="claim">Retiring costs least over three years</p>
+      <table class="data">
+        <thead><tr><th></th><th class="c">Patch</th><th class="c">Rehost</th><th class="c hl">Retire</th></tr></thead>
+        <tbody>
+          <tr><td>3-year cost</td><td class="c">$10.2M</td><td class="c">$8.9M</td><td class="c hl"><b>$6.3M</b></td></tr>
+          <tr><td>Time to value</td><td class="c">none</td><td class="c">4 mo</td><td class="c hl">6 mo</td></tr>
+          <tr><td>Incidents removed</td><td class="c"><span class="harvey" style="--v:0"></span></td><td class="c"><span class="harvey" style="--v:25"></span></td><td class="c hl"><span class="harvey" style="--v:75"></span></td></tr>
+          <tr><td>Delivery risk</td><td class="c"><span class="tag ok">LOW</span></td><td class="c"><span class="tag warn">MED</span></td><td class="c hl"><span class="tag warn">MED</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel" style="grid-area:plan">
+      <h3><i-calendar/>Plan</h3>
+      <p class="claim">Six months and three workstreams to a March cut-over</p>
+      <div class="roadmap vmid" style="--cols:6">
+        <div class="rm-h">Workstream</div><div class="rm-h">Oct</div><div class="rm-h">Nov</div><div class="rm-h">Dec</div><div class="rm-h">Jan</div><div class="rm-h">Feb</div><div class="rm-h">Mar</div>
+        <div class="rm-lane"><i-dollar/>Payments</div>
+        <div class="rm-bar" style="--s:0;--e:1">PSP integration</div>
+        <div class="rm-bar soft" style="--s:2;--e:2">Freeze</div>
+        <div class="rm-bar" style="--s:3;--e:4">Ramp to 100%</div>
+        <div class="rm-lane"><i-refresh/>Refunds</div>
+        <div class="rm-bar alt" style="--s:1;--e:4">Build and dual-run</div>
+        <div class="rm-bar ms" style="--s:5;--e:5">Cut-over</div>
+        <div class="rm-lane"><i-database/>Data</div>
+        <div class="rm-bar" style="--s:0;--e:0">EU replica</div>
+        <div class="rm-bar alt" style="--s:1;--e:3">Backfill 41 TB</div>
+      </div>
+    </div>
+    <div class="panel solid" style="grid-area:ask">
+      <h3><i-flag/>The ask</h3>
+      <p class="claim">Approve $1.2M across Q4 and Q1</p>
+      <ol class="steps">
+        <li><b>Release $420K for Q4</b><span>CFO · by Oct 15</span></li>
+        <li><b>Freeze monolith features</b><span>CPO · from Nov 1</span></li>
+      </ol>
+    </div>
+  </div>
+  <aside class="notes">The case rests on run cost: $3.4M a year today, $1.3M after retirement. The investment is back by Q4 2027 even at 10% discounting. Patching is cheapest this year and most expensive over three.</aside>
+</section>

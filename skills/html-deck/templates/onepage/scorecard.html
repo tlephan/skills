@@ -1,0 +1,67 @@
+<!-- template: onepage/scorecard · metrics review (QBR / MBR): 6 KPI tiles vs target, the trend, the mix, the weak spot, initiative status. Areas: kpis / trend / mix / budget / status -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Checkout · Q3 2026 scorecard</div>
+    <div class="op-meta">
+      <span class="tag warn"><i-alert/>2 of 6 at risk</span>
+      <span><i-calendar/>Jul – Sep 2026</span>
+      <span><i-users/>Checkout SRE</span>
+    </div>
+    <h2>Orders and conversion beat plan; payments reliability is slipping</h2>
+  </header>
+  <div class="op" style="grid-template-areas:'kpis kpis kpis' 'trend mix budget' 'status status budget';grid-template-columns:1.15fr 1fr 1fr;grid-template-rows:auto minmax(0,1fr) minmax(0,1fr)">
+    <div class="kpis" style="grid-area:kpis;--n:6">
+      <div class="kpi"><div class="label">Orders</div><div class="value">2.9<small>M</small></div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>12% vs Q2</span><span class="spark" data-width="52" data-values="2.4,2.5,2.5,2.6,2.7,2.8,2.9"></span></div></div>
+      <div class="kpi"><div class="label">Conversion</div><div class="value">63.6<small>%</small></div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>2.4 pts</span><span class="spark" data-width="52" data-values="61.2,61,61.5,62.4,62.9,63.4,63.6"></span></div></div>
+      <div class="kpi"><div class="label">Revenue per order</div><div class="value">$86</div>
+        <div class="foot"><span class="delta good"><i-arrow-up/>$3 vs Q2</span><span class="spark" data-width="52" data-values="82,83,83,84,85,85,86"></span></div></div>
+      <div class="kpi"><div class="label">p95 latency</div><div class="value">410<small>ms</small></div>
+        <div class="foot"><span class="delta bad"><i-arrow-up/>target 400</span><span class="spark" data-width="52" data-values="380,385,392,398,404,408,410"></span></div></div>
+      <div class="kpi"><div class="label">Availability</div><div class="value">99.93<small>%</small></div>
+        <div class="foot"><span class="delta bad"><i-arrow-down/>target 99.95</span><span class="spark" data-width="52" data-values="99.97,99.96,99.96,99.95,99.94,99.93,99.93"></span></div></div>
+      <div class="kpi"><div class="label">P1/P2 incidents</div><div class="value">3</div>
+        <div class="foot"><span class="delta good"><i-arrow-down/>70% vs Q2</span><span class="spark" data-width="52" data-values="11,9,10,7,6,4,3"></span></div></div>
+    </div>
+    <div class="panel" style="grid-area:trend">
+      <h3><i-chart-line/>Volume</h3>
+      <p class="claim">Wallet orders up 46% while card orders held flat</p>
+      <figure class="chart">
+        <figcaption>Orders per week, thousands <small>Jul – Sep 2026</small></figcaption>
+        <script data-chart="column">{"labels":["W27","W28","W29","W30","W31","W32","W33","W34","W35","W36","W37","W38","W39"],"series":[{"name":"Wallet","values":[52,54,57,58,62,66,69,71,72,73,74,75,76],"color":"c1"},{"name":"Card and other","values":[153,154,155,152,154,155,155,155,157,158,159,161,162],"color":"other"}],"stacked":true,"valueLabels":"none","suffix":"K"}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:mix">
+      <h3><i-chart-pie/>Mix</h3>
+      <p class="claim">Wallets reached 31% of orders</p>
+      <figure class="chart">
+        <figcaption>Payment method, % of orders</figcaption>
+        <script data-chart="donut">{"labels":["Card","Wallet","BNPL","Bank"],"values":[52,31,11,6],"suffix":"%","showValues":false,"colors":["c2","c1","c3","c4"],"highlight":["Wallet"],"center":{"value":"2.9M","label":"orders"}}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:budget">
+      <h3><i-shield/>Reliability</h3>
+      <p class="claim">Payments burned 62% of its error budget</p>
+      <figure class="chart">
+        <figcaption>Error budget left, % <small>Q3 2026</small></figcaption>
+        <script data-chart="bar">{"labels":["Search","Pricing","Cart","Order","Shipping","Payments"],"values":[92,90,81,74,66,38],"suffix":"%","highlight":["Payments"],"target":50,"targetLabel":"Floor","max":100,"barWidth":24}</script>
+      </figure>
+      <div class="callout warn"><i-zap/><p><b>PSP timeouts</b> cause 71% of payment errors; failover ships Nov 4</p></div>
+    </div>
+    <div class="panel" style="grid-area:status">
+      <h3><i-list/>Initiatives<span class="tag ok">2 of 4 on track</span></h3>
+      <p class="claim">PSP failover is at risk; refunds slipped to February</p>
+      <table class="data">
+        <thead><tr><th>Initiative</th><th>Owner</th><th style="width:30%">Progress</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Wallet default, EU</td><td>Payments</td><td><div class="meter-row"><span class="meter" style="--v:80"></span><em>80%</em></div></td><td>Oct 20</td><td><span class="tag ok">ON TRACK</span></td></tr>
+          <tr><td>EU read replica</td><td>Platform</td><td><div class="meter-row"><span class="meter" style="--v:60"></span><em>60%</em></div></td><td>Oct 20</td><td><span class="tag ok">ON TRACK</span></td></tr>
+          <tr class="hl"><td>PSP failover</td><td>Payments</td><td><div class="meter-row"><span class="meter warn" style="--v:35"></span><em>35%</em></div></td><td>Nov 4</td><td><span class="tag warn">AT RISK</span></td></tr>
+          <tr><td>Refunds migration</td><td>Team Echo</td><td><div class="meter-row"><span class="meter bad" style="--v:10"></span><em>10%</em></div></td><td>Feb 2027</td><td><span class="tag bad">LATE</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <aside class="notes">Four of six metrics are green. Both reds trace to payments: PSP timeouts drive the latency and availability misses. Failover ships Nov 4; ask for a decision on the refunds slip next month.</aside>
+</section>

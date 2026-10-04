@@ -1,0 +1,28 @@
+<!-- template: hub-spoke · one central component and its 4-8 dependents; pair with a health breakdown -->
+<section class="slide">
+  <header>
+    <div class="kicker">Architecture · Dependencies</div>
+    <h2>Order service is the hub for six domain integrations</h2>
+  </header>
+  <div class="body split" style="--cols:1fr 1fr">
+    <div class="hub">
+      <div class="center"><i-box/><b>Order service</b><span>1.2K req/s</span></div>
+      <div class="node"><b>Cart</b><span>gRPC</span></div>
+      <div class="node"><b>Pricing</b><span>gRPC</span></div>
+      <div class="node"><b>Payments</b><span>gRPC</span></div>
+      <div class="node"><b>Shipping</b><span>events</span></div>
+      <div class="node"><b>Email</b><span>events</span></div>
+      <div class="node"><b>Analytics</b><span>events</span></div>
+    </div>
+    <div class="stack vcenter gap-s">
+      <h4>Integration error rate, % of calls</h4>
+      <div class="meter-row"><b>Cart</b><span class="meter" style="--v:8"></span><em>0.08</em></div>
+      <div class="meter-row"><b>Pricing</b><span class="meter" style="--v:12"></span><em>0.12</em></div>
+      <div class="meter-row"><b>Payments</b><span class="meter bad" style="--v:74"></span><em>0.74</em></div>
+      <div class="meter-row"><b>Shipping</b><span class="meter" style="--v:20"></span><em>0.20</em></div>
+      <div class="meter-row"><b>Email</b><span class="meter" style="--v:5"></span><em>0.05</em></div>
+      <div class="meter-row"><b>Analytics</b><span class="meter" style="--v:3"></span><em>0.03</em></div>
+      <p class="xs faint">Bar scale: 1.0% = full. SLO 0.5%.</p>
+    </div>
+  </div>
+</section>

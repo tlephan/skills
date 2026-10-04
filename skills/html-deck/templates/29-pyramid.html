@@ -1,0 +1,21 @@
+<!-- template: pyramid · layered hierarchy (top = fewest / most costly); notes align row-for-row on the right -->
+<section class="slide">
+  <header>
+    <div class="kicker">Quality · Test strategy</div>
+    <h2>70% of checks run at the cheapest layer, in under 4 minutes</h2>
+  </header>
+  <div class="body pyr-wrap">
+    <div class="pyramid">
+      <div class="tier">E2E<small>5%</small></div>
+      <div class="tier">Contract<small>10%</small></div>
+      <div class="tier">Integration<small>15%</small></div>
+      <div class="tier">Unit<small>70%</small></div>
+    </div>
+    <div class="pyr-notes">
+      <div><b>42 journeys</b><span>Nightly, against staging</span></div>
+      <div><b>310 contracts</b><span>Every PR, provider stubs</span></div>
+      <div><b>1,150 tests</b><span>Every PR, ephemeral DB</span></div>
+      <div><b>8,400 tests</b><span>Every commit, 3.6 min</span></div>
+    </div>
+  </div>
+</section>

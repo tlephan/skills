@@ -1,0 +1,26 @@
+<!-- template: roadmap · Gantt lanes: --cols periods; bars span --s..--e (0-based columns); .ms = milestone; .rm-now = today -->
+<section class="slide">
+  <header>
+    <div class="kicker">Plan · Roadmap</div>
+    <h2>Three workstreams converge on the March cut-over</h2>
+  </header>
+  <div class="body vcenter" style="gap:40px">
+    <div class="roadmap" style="--cols:6">
+      <div class="rm-h">Workstream</div><div class="rm-h">Oct</div><div class="rm-h">Nov</div><div class="rm-h">Dec</div><div class="rm-h">Jan</div><div class="rm-h">Feb</div><div class="rm-h">Mar</div>
+      <div class="rm-lane"><i-dollar/>Payments</div>
+      <div class="rm-bar" style="--s:0;--e:1">PSP integration</div>
+      <div class="rm-bar soft" style="--s:2;--e:2">Freeze</div>
+      <div class="rm-bar" style="--s:3;--e:4">Ramp 50 → 100%</div>
+      <div class="rm-lane"><i-refresh/>Refunds</div>
+      <div class="rm-bar alt" style="--s:1;--e:4">Build + dual-run</div>
+      <div class="rm-lane"><i-database/>Data</div>
+      <div class="rm-bar" style="--s:0;--e:0">EU replica</div>
+      <div class="rm-bar alt" style="--s:1;--e:3">Backfill 41 TB</div>
+      <div class="rm-lane"><i-flag/>Milestones</div>
+      <div class="rm-bar ms" style="--s:2;--e:2">Peak</div>
+      <div class="rm-bar ms" style="--s:5;--e:5">Cut-over</div>
+      <div class="rm-now" style="--at:0.1"></div>
+    </div>
+    <div class="callout warn"><i-alert/><p><b>Critical path:</b> payments ramp cannot start before the Dec freeze lifts — any PSP slip moves cut-over.</p></div>
+  </div>
+</section>

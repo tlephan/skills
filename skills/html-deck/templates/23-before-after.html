@@ -1,0 +1,18 @@
+<!-- template: before-after · what changed (two sides + arrow) and the per-item effect as a dumbbell chart -->
+<section class="slide">
+  <header>
+    <div class="kicker">Delivery · Ways of working</div>
+    <h2>Trunk-based delivery cut cycle time in every team</h2>
+  </header>
+  <div class="body split" style="--cols:2fr 3fr">
+    <div class="compare vertical">
+      <div class="side"><h4>Before · Q1</h4><ul class="checks"><li class="no"><i-x-circle/>Long-lived feature branches</li><li class="no"><i-x-circle/>Weekly release train</li><li class="no"><i-x-circle/>Manual regression, 6 days</li></ul></div>
+      <div class="vs"><i-arrow-down/></div>
+      <div class="side after"><h4>After · Q3</h4><ul class="checks"><li><i-check-circle/>Trunk + feature flags</li><li><i-check-circle/>On-demand deploys</li><li><i-check-circle/>Automated AC checks</li></ul></div>
+    </div>
+    <figure class="chart">
+      <figcaption>Median cycle time per team, days <small>Q1 vs Q3 2026</small></figcaption>
+      <script data-chart="dumbbell">{"labels":["Checkout","Payments","Search","Accounts","Shipping"],"series":[{"name":"Q1","values":[9.5,12,6,8,10]},{"name":"Q3","values":[3,7.5,2.5,3.5,4]}],"suffix":" d","decimals":1}</script>
+    </figure>
+  </div>
+</section>

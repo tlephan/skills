@@ -1,0 +1,21 @@
+<!-- template: table · structured status across items; embed meters, tags, icons so each row reads at a glance -->
+<section class="slide">
+  <header>
+    <div class="kicker">Readiness · Cut-over</div>
+    <h2>Four of six services are cleared for cut-over</h2>
+  </header>
+  <div class="body vcenter" style="gap:20px">
+    <table class="data roomy">
+      <thead><tr><th>Service</th><th>Owner</th><th style="width:22%">AC test coverage</th><th class="num">Error budget left</th><th class="c">Load test</th><th class="c">Runbook</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Cart</td><td>Team Aurora</td><td><div class="meter-row"><span class="meter" style="--v:92"></span><em>92%</em></div></td><td class="num">81%</td><td class="c yes"><i-check/></td><td class="c yes"><i-check/></td><td><span class="tag ok">READY</span></td></tr>
+        <tr><td>Order</td><td>Team Borealis</td><td><div class="meter-row"><span class="meter" style="--v:88"></span><em>88%</em></div></td><td class="num">74%</td><td class="c yes"><i-check/></td><td class="c yes"><i-check/></td><td><span class="tag ok">READY</span></td></tr>
+        <tr><td>Pricing</td><td>Team Cirrus</td><td><div class="meter-row"><span class="meter" style="--v:84"></span><em>84%</em></div></td><td class="num">90%</td><td class="c yes"><i-check/></td><td class="c yes"><i-check/></td><td><span class="tag ok">READY</span></td></tr>
+        <tr><td>Shipping</td><td>Team Delta</td><td><div class="meter-row"><span class="meter" style="--v:81"></span><em>81%</em></div></td><td class="num">66%</td><td class="c yes"><i-check/></td><td class="c yes"><i-check/></td><td><span class="tag ok">READY</span></td></tr>
+        <tr class="hl"><td>Payments</td><td>Team Echo</td><td><div class="meter-row"><span class="meter warn" style="--v:66"></span><em>66%</em></div></td><td class="num">38%</td><td class="c no"><i-x/></td><td class="c yes"><i-check/></td><td><span class="tag warn">AT RISK</span></td></tr>
+        <tr><td>Refunds</td><td>Team Echo</td><td><div class="meter-row"><span class="meter bad" style="--v:30"></span><em>30%</em></div></td><td class="num">–</td><td class="c no"><i-x/></td><td class="c no"><i-x/></td><td><span class="tag bad">NOT STARTED</span></td></tr>
+      </tbody>
+    </table>
+    <p class="xs faint">Ready = coverage ≥ 80%, error budget ≥ 50%, load test passed at 2× peak, runbook reviewed.</p>
+  </div>
+</section>

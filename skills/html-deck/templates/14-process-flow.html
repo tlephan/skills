@@ -1,0 +1,32 @@
+<!-- template: process-flow · chevron sequence (3-7 stages), one metric per stage aligned underneath, trend of the outcome -->
+<section class="slide">
+  <header>
+    <div class="kicker">Delivery · Pipeline</div>
+    <h2>One six-stage pipeline cut lead time from 6.5 to 1.5 days</h2>
+  </header>
+  <div class="body">
+    <div class="flow">
+      <div class="step"><i-file-text/>Spec<small>AC tagged</small></div>
+      <div class="step"><i-code/>Build<small>Trunk-based</small></div>
+      <div class="step"><i-flask/>Test<small>Unit + contract</small></div>
+      <div class="step alt"><i-shield-check/>Verify<small>Security scan</small></div>
+      <div class="step alt"><i-rocket/>Release<small>Canary 5%</small></div>
+      <div class="step dark"><i-eye/>Observe<small>SLO watch</small></div>
+    </div>
+    <div class="g6">
+      <div class="kpi sm"><div class="label">Review wait</div><div class="value">6<small>h</small></div></div>
+      <div class="kpi sm"><div class="label">Build</div><div class="value">6<small>min</small></div></div>
+      <div class="kpi sm"><div class="label">Tests</div><div class="value">14<small>min</small></div></div>
+      <div class="kpi sm"><div class="label">Scan</div><div class="value">4<small>min</small></div></div>
+      <div class="kpi sm"><div class="label">Canary</div><div class="value">45<small>min</small></div></div>
+      <div class="kpi sm"><div class="label">Rollbacks</div><div class="value">2<small>%</small></div></div>
+    </div>
+    <div class="split fill" style="--cols:3fr 1fr">
+      <figure class="chart">
+        <figcaption>Median lead time, commit to production, days</figcaption>
+        <script data-chart="area">{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"values":[6.5,6.1,5.2,4.0,3.1,2.4,2.0,1.7,1.5],"suffix":" d","decimals":1,"target":2,"targetLabel":"Goal"}</script>
+      </figure>
+      <div class="callout" style="align-self:center"><i-info/><p><b>Gate rule:</b> stages block only on deterministic checks; reviewer judgement is advisory.</p></div>
+    </div>
+  </div>
+</section>

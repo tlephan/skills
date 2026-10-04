@@ -1,0 +1,55 @@
+<!-- template: onepage/strategy · strategy on a page: north star, 3 pillars (goal, initiatives, owner · budget), foundation, trajectory, investment. Areas: house / path / invest -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Checkout · FY2027 strategy</div>
+    <div class="op-meta">
+      <span class="tag accent"><i-compass/>For approval</span>
+      <span><i-calendar/>30 Sep 2026</span>
+      <span><i-user/>VP Product</span>
+    </div>
+    <h2>One-tap checkout by 2027: three bets lift conversion to 68%</h2>
+  </header>
+  <div class="op" style="grid-template-areas:'house house' 'path invest';grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1.4fr) minmax(0,1fr)">
+    <div class="house" style="grid-area:house">
+      <div class="roof"><small>North star</small><b>Every returning shopper checks out in one tap</b><span>Conversion 68% by Q4 2027 · 63.6% today</span></div>
+      <div class="pillars">
+        <div class="pillar">
+          <b><i-smartphone ico/>Wallet-first payments</b>
+          <div class="goal">Wallet share<b>31% → 45%</b></div>
+          <ul><li>Wallet as the EU default</li><li>Saved cards across brands</li><li>One-tap reorder</li></ul>
+          <div class="own">Payments · $1.1M</div>
+        </div>
+        <div class="pillar">
+          <b><i-zap ico/>Faster pages</b>
+          <div class="goal">p95 latency<b>410 → 250 ms</b></div>
+          <ul><li>Edge-rendered checkout</li><li>EU read replica</li><li>Image and script budget</li></ul>
+          <div class="own">Platform · $0.9M</div>
+        </div>
+        <div class="pillar">
+          <b><i-shield-check ico/>Trusted checkout</b>
+          <div class="goal">Payment declines<b>6.1% → 4.0%</b></div>
+          <ul><li>Adaptive 3-D Secure</li><li>PSP failover</li><li>Fraud model v3</li></ul>
+          <div class="own">Risk · $0.6M</div>
+        </div>
+      </div>
+      <div class="base"><b>Foundation</b><span class="chip"><i-box/>Order service</span><span class="chip"><i-layers/>Event bus</span><span class="chip"><i-flask/>Test automation</span><span class="chip"><i-eye/>Observability</span></div>
+    </div>
+    <div class="panel" style="grid-area:path">
+      <h3><i-chart-line/>Trajectory</h3>
+      <p class="claim">+4.4 pts needed over five quarters</p>
+      <figure class="chart">
+        <figcaption>Checkout conversion, % <small>actual and plan</small></figcaption>
+        <script data-chart="line">{"labels":["Q1 26","Q2 26","Q3 26","Q4 26","Q1 27","Q2 27","Q3 27","Q4 27"],"series":[{"name":"Actual","values":[61.1,61.2,63.6,null,null,null,null,null]},{"name":"Plan","values":[null,null,63.6,64.4,65.3,66.2,67.1,68],"color":"c1","dashed":true}],"suffix":"%","min":60,"max":70,"target":68}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:invest">
+      <h3><i-dollar/>Investment</h3>
+      <p class="claim">$3.4M in 2027, a third on wallets</p>
+      <figure class="chart">
+        <figcaption>FY2027 budget by pillar, $M</figcaption>
+        <script data-chart="bar">{"labels":["Wallet-first","Faster pages","Foundation","Trusted checkout"],"values":[1.1,0.9,0.8,0.6],"prefix":"$","suffix":"M","decimals":1,"highlight":["Wallet-first"]}</script>
+      </figure>
+    </div>
+  </div>
+  <aside class="notes">Read top-down: the north star, the three bets that move it, and the platform they stand on. Each pillar has one goal metric, three initiatives and an owner with a budget. The right column shows the path to 68% and where the $3.4M goes.</aside>
+</section>

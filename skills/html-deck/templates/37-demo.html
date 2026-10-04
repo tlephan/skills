@@ -1,0 +1,37 @@
+<!-- template: demo · real captures of the system, each with a caption that says what to notice: a browser screenshot (.bbar + <img src="shots/….png">, inlined by the build) beside a terminal (.tbar + pre.term as real text, or an <img>) · .note = how to rerun it · capture: chrome --headless --hide-scrollbars --window-size=1440,860 --screenshot=shots/app.png URL -->
+<section class="slide">
+  <header>
+    <div class="kicker">Demo · Rollout console and CLI</div>
+    <h2>Demo: payments v2.4.0 holds every budget at 25%, then promotes in 42 seconds</h2>
+  </header>
+  <div class="body split" style="--cols:5fr 4fr">
+    <figure class="shot">
+      <div class="cap"><i-monitor ico="sm"/><div><b>Rollout console · payments v2.4.0</b><small>Canary at 25%: p95 312 ms and errors 0.08%, both inside budget</small></div></div>
+      <div class="frame">
+        <div class="bbar"><div class="dots"><span></span><span></span><span></span></div><div class="bnav"><i-arrow-left/><i-arrow-right/><i-refresh/></div><div class="url"><i-lock/>deploy.example.com/rollouts/payments</div></div>
+        <img alt="Rollout console: payments v2.4.0 at the 25% canary step, p95 312 ms, error rate 0.08%, CPU 61%, all inside budget" src="shots/rollout-console.svg">
+      </div>
+    </figure>
+    <figure class="shot">
+      <div class="cap"><i-terminal ico="sm alt"/><div><b>CLI · what on-call runs</b><small>Then <code>promote --to 100</code>: two steps, 42 s, no page</small></div></div>
+      <div class="frame term">
+        <div class="tbar"><div class="dots"><span></span><span></span><span></span></div>deployctl<small>· staging, recorded 29 Sep 2026</small></div>
+<pre class="term"><span class="p">$</span> deployctl canary status payments <span class="c"># on-call</span>
+<span class="k">rollout</span>    payments v2.4.0 · canary <span class="n">25%</span> · 18 min
+<span class="k">p95</span>        <span class="n">312 ms</span>   budget 400 ms   <span class="ok">✓</span>
+<span class="k">errors</span>     <span class="n">0.08%</span>    budget 0.50%    <span class="ok">✓</span>
+<span class="k">cpu</span>        <span class="n">61%</span>      budget 80%      <span class="ok">✓</span>
+<span class="k">verdict</span>    <span class="ok">healthy</span> · auto-promote in 2 min
+
+<span class="p">$</span> deployctl canary promote payments --to 100
+<span class="c">shifting 25% → 50% → 100%</span>
+<span class="ok">✓</span> <span class="n">50%</span>   p95 318 ms · errors 0.07%
+<span class="ok">✓</span> <span class="n">100%</span>  p95 321 ms · errors 0.08%
+<span class="ok">✓ promoted v2.4.0 in 42 s</span> · v2.3.7 kept 24 h
+<span class="p">$</span> <span class="s">_</span></pre>
+      </div>
+    </figure>
+  </div>
+  <p class="note">Run it: <code>deployctl demo --service payments</code> on staging · Rollouts · payments. Recorded 29 Sep 2026.</p>
+  <aside class="notes">About two minutes. One: the console shows the canary at the 25% step after 18 minutes; p95, errors and CPU each sit inside budget, so the policy will promote on its own in two minutes. Two: the same check from the CLI, which is what on-call actually runs, then a manual promote to 100%: two steps, 42 seconds, no page. The old version stays warm for 24 hours so rollback is one command.</aside>
+</section>

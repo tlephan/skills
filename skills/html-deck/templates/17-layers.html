@@ -1,0 +1,19 @@
+<!-- template: layers · layered stack (top = closest to user) with chips per layer and a cross-cutting rail; mark new parts -->
+<section class="slide">
+  <header>
+    <div class="kicker">Architecture · Platform stack</div>
+    <h2>New domain services sit on shared platform foundations</h2>
+  </header>
+  <div class="body">
+    <div class="layers fill">
+      <div class="stack">
+        <div class="layer"><b><i-monitor/>Experience</b><div><span class="chip">Web checkout</span><span class="chip">iOS</span><span class="chip">Android</span><span class="chip">Partner API</span></div></div>
+        <div class="layer accent"><b><i-box/>Domain services</b><div><span class="chip">Cart</span><span class="chip">Order</span><span class="chip new">Payment</span><span class="chip">Pricing</span><span class="chip">Shipping</span><span class="chip new">Refunds</span></div></div>
+        <div class="layer"><b><i-cloud/>Platform</b><div><span class="chip"><i-shield/>API gateway</span><span class="chip"><i-layers/>Event bus</span><span class="chip"><i-sliders/>Feature flags</span><span class="chip"><i-grid/>Kubernetes</span></div></div>
+        <div class="layer"><b><i-database/>Data</b><div><span class="chip">Postgres</span><span class="chip">Redis</span><span class="chip">Lakehouse</span><span class="chip">Search index</span></div></div>
+      </div>
+      <div class="rail"><i-shield-check/>Security · Observability · CI/CD</div>
+    </div>
+    <p class="small muted"><span class="tag hot">NEW</span> built this half · all services deploy through the same pipeline and share one observability stack.</p>
+  </div>
+</section>

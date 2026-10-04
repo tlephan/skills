@@ -1,0 +1,18 @@
+<!-- template: scatter-quadrant · data-driven 2x2 (effort vs value, bubble = reach); ≤ 3 series; label only the points you discuss -->
+<section class="slide">
+  <header>
+    <div class="kicker">Prioritization</div>
+    <h2>Four quick wins deliver 60% of the Q4 value at 25% of the effort</h2>
+  </header>
+  <div class="body split" style="--cols:5fr 2fr">
+    <figure class="chart">
+      <figcaption>Backlog items: effort vs. value <small>Bubble size = customers affected</small></figcaption>
+      <script data-chart="scatter">{"series":[{"name":"Checkout UX","points":[[2,8.2,40,"Guest checkout"],[3,7.1,25,"Address autofill"],[7.5,6.4,30,"One-page flow"]]},{"name":"Payments","points":[[3.2,8.8,35,"Wallet default"],[8.2,7.8,20,"Local methods"],[6.2,3.1,10]]},{"name":"Platform","points":[[1.8,6,15,"CDN tuning"],[9,4.2,12],[4.6,2.2,8]]}],"xLabel":"Effort (engineer-weeks)","yLabel":"Value score","xMin":0,"xMax":10,"yMin":0,"yMax":10,"quadrants":[5,5],"quadrantLabels":["Quick wins","Big bets","Fill-ins","Money pits"]}</script>
+    </figure>
+    <div class="stack" style="justify-content:center">
+      <div class="kpi sm"><div class="label">Quick wins</div><div class="value">4 items</div><div class="sub">11 engineer-weeks total</div></div>
+      <div class="kpi sm"><div class="label">Share of Q4 value</div><div class="value">60%</div></div>
+      <div class="callout alt"><i-lightbulb/><p>Ship quick wins in October; scope big bets for Q1.</p></div>
+    </div>
+  </div>
+</section>

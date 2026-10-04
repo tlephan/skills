@@ -1,0 +1,18 @@
+<!-- template: chart-insight · the workhorse: one chart (60%) + 2-3 takeaways that say what it means -->
+<section class="slide">
+  <header>
+    <div class="kicker">Results · Quality</div>
+    <h2>Automated test coverage doubled in two quarters</h2>
+  </header>
+  <div class="body split" style="--cols:3fr 2fr">
+    <figure class="chart">
+      <figcaption>Acceptance criteria with a passing automated test, % <small>Monthly, 2026</small></figcaption>
+      <script data-chart="line">{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"series":[{"name":"Checkout","values":[38,41,45,52,58,64,70,76,81]},{"name":"Payments","values":[35,36,38,40,44,49,55,60,66]}],"suffix":"%","min":0,"max":100,"target":80,"annotations":[{"x":"Apr","label":"Spec-to-test pilot"}]}</script>
+    </figure>
+    <div class="takeaways">
+      <div class="takeaway"><i-trend-up ico/><div><b>Checkout passed the 80% bar</b><span>First domain at target, 3 months early</span></div></div>
+      <div class="takeaway"><i-clock ico="alt"/><div><b>Manual regression: 6 → 2.5 days</b><span>Frees one QA engineer per release</span></div></div>
+      <div class="takeaway"><i-alert ico="hot"/><div><b>Payments trails by 15 pts</b><span>Legacy gateway blocks contract tests</span></div></div>
+    </div>
+  </div>
+</section>

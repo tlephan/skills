@@ -1,0 +1,32 @@
+<!-- template: gauges · progress against a limit (gauge per headline ratio) + meters for the breakdown -->
+<section class="slide">
+  <header>
+    <div class="kicker">Migration · Progress</div>
+    <h2>Migration is 72% complete; payments is the critical path</h2>
+  </header>
+  <div class="body">
+    <div class="g3" style="height:250px">
+      <figure class="chart"><figcaption>Traffic on new platform</figcaption>
+        <script data-chart="gauge">{"value":72,"suffix":"%","target":90,"targetLabel":"Dec target","label":"of orders"}</script></figure>
+      <figure class="chart"><figcaption>Services migrated</figcaption>
+        <script data-chart="gauge">{"value":18,"max":24,"label":"of 24 services"}</script></figure>
+      <figure class="chart"><figcaption>Data migrated</figcaption>
+        <script data-chart="gauge">{"value":64,"suffix":"%","tone":"warn","target":80,"targetLabel":"Plan","label":"of 41 TB"}</script></figure>
+    </div>
+    <div class="g2 gap-l">
+      <div class="stack gap-s">
+        <h4>Traffic by domain</h4>
+        <div class="meter-row"><b>Search</b><span class="meter" style="--v:100"></span><em>100%</em></div>
+        <div class="meter-row"><b>Cart</b><span class="meter" style="--v:95"></span><em>95%</em></div>
+        <div class="meter-row"><b>Accounts</b><span class="meter" style="--v:80"></span><em>80%</em></div>
+      </div>
+      <div class="stack gap-s">
+        <h4>&nbsp;</h4>
+        <div class="meter-row"><b>Shipping</b><span class="meter" style="--v:70"></span><em>70%</em></div>
+        <div class="meter-row"><b>Checkout</b><span class="meter" style="--v:65"></span><em>65%</em></div>
+        <div class="meter-row"><b>Payments</b><span class="meter bad" style="--v:20"></span><em>20%</em></div>
+      </div>
+    </div>
+    <div class="callout bad push"><i-alert/><p><b>Payments at 20%:</b> PSP sandbox access is the single blocker — escalated Sep 24.</p></div>
+  </div>
+</section>

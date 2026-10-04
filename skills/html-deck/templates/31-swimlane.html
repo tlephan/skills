@@ -1,0 +1,23 @@
+<!-- template: swimlane · process across owners; lanes first, then nodes placed by grid-row (lane) / grid-column (step + 1) -->
+<section class="slide">
+  <header>
+    <div class="kicker">Process · Refunds</div>
+    <h2>Refunds now take 3 handoffs across 4 teams, down from 7</h2>
+  </header>
+  <div class="body">
+    <div class="swimlane fill" style="--cols:5;grid-template-rows:repeat(4,1fr)"
+         data-links="req -> triage; triage -> check; check -> approve : > $500; check => issue : auto ≤ $500; approve -> issue; issue -> notify [h]; issue --> ledger [h] : event">
+      <div class="lane" style="grid-row:1">Customer</div>
+      <div class="lane" style="grid-row:2">Support</div>
+      <div class="lane" style="grid-row:3">Payments</div>
+      <div class="lane" style="grid-row:4">Finance</div>
+      <div class="node" data-id="req" style="grid-row:1;grid-column:2"><b>Request refund</b></div>
+      <div class="node" data-id="triage" style="grid-row:2;grid-column:3"><b>Triage</b></div>
+      <div class="node accent" data-id="check" style="grid-row:3;grid-column:3"><b>Rules check</b></div>
+      <div class="node" data-id="approve" style="grid-row:2;grid-column:4"><b>Approve</b></div>
+      <div class="node new" data-id="issue" style="grid-row:3;grid-column:5"><b>Issue refund</b></div>
+      <div class="node" data-id="notify" style="grid-row:1;grid-column:6"><b>Notified</b></div>
+      <div class="node ext" data-id="ledger" style="grid-row:4;grid-column:6"><b>Ledger posted</b></div>
+    </div>
+  </div>
+</section>

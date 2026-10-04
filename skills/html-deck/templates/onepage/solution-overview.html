@@ -1,0 +1,65 @@
+<!-- template: onepage/solution-overview · introduce a solution, tool or process: the problem, how it works, results, benefits, rollout, the ask. Areas: problem / how / results / gains / rollout / ask -->
+<section class="slide slide--onepage">
+  <header>
+    <div class="kicker">Quality engineering · Spec-to-test</div>
+    <div class="op-meta">
+      <span class="tag info"><i-flask/>Pilot results</span>
+      <span><i-calendar/>30 Sep 2026</span>
+      <span><i-users/>QA guild</span>
+    </div>
+    <h2>Spec-to-test cuts manual regression from 6 days to 2.5 per release</h2>
+  </header>
+  <div class="op numbered" style="grid-template-areas:'problem how how' 'results gains ask' 'rollout rollout ask';grid-template-columns:1fr 1fr 0.92fr;grid-template-rows:minmax(0,0.85fr) minmax(0,1.25fr) minmax(0,0.75fr)">
+    <div class="panel" style="grid-area:problem">
+      <h3><i-alert/>Problem</h3>
+      <p class="claim">Acceptance criteria were checked by hand</p>
+      <div class="hero vmid"><div class="value">62%</div><div class="label">of acceptance criteria had no automated test in January</div></div>
+    </div>
+    <div class="panel" style="grid-area:how">
+      <h3><i-workflow/>How it works</h3>
+      <p class="claim">Every acceptance criterion becomes a test that runs in CI</p>
+      <div class="flow vmid">
+        <div class="step"><i-file-text/>Spec<small>AC tagged in story</small></div>
+        <div class="step hot"><i-sparkles/>Generate<small>Test stub per AC</small></div>
+        <div class="step"><i-users/>Review<small>Dev + QA pair</small></div>
+        <div class="step"><i-play/>Run<small>CI on every PR</small></div>
+        <div class="step dark"><i-chart-bar/>Report<small>Coverage per AC</small></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:results">
+      <h3><i-trend-up/>Results</h3>
+      <p class="claim">Checkout coverage doubled to 81%</p>
+      <figure class="chart">
+        <figcaption>AC with a passing automated test, % <small>2026</small></figcaption>
+        <script data-chart="line">{"labels":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"series":[{"name":"Checkout","values":[38,41,45,52,58,64,70,76,81]},{"name":"Payments","values":[35,36,38,40,44,49,55,60,66]}],"suffix":"%","min":0,"max":100,"target":80}</script>
+      </figure>
+    </div>
+    <div class="panel" style="grid-area:gains">
+      <h3><i-award/>Benefits</h3>
+      <div class="stack gap-s vmid">
+        <div class="kpi inline"><i-clock ico/><div><div class="value">−3.5 days</div><div class="label">manual regression per release</div></div></div>
+        <div class="kpi inline"><i-bug ico/><div><div class="value">−45%</div><div class="label">escaped defects vs H1</div></div></div>
+        <div class="kpi inline"><i-users ico/><div><div class="value">1 FTE</div><div class="label">QA effort freed per release train</div></div></div>
+      </div>
+    </div>
+    <div class="panel" style="grid-area:rollout">
+      <h3><i-route/>Rollout<span class="tag accent">12 teams by Mar 2027</span></h3>
+      <div class="timeline vmid">
+        <div class="ms done"><div class="when">Q2 2026</div><div class="pin"></div><div class="what">Checkout pilot</div></div>
+        <div class="ms now"><div class="when">Q3 2026</div><div class="pin"></div><div class="what">Payments, search</div></div>
+        <div class="ms"><div class="when">Q4 2026</div><div class="pin"></div><div class="what">Cart, pricing, accounts</div></div>
+        <div class="ms"><div class="when">Q1 2027</div><div class="pin"></div><div class="what">All 12 teams</div></div>
+      </div>
+    </div>
+    <div class="panel solid" style="grid-area:ask">
+      <h3><i-flag/>The ask</h3>
+      <p class="claim">Scale to three more domains in Q4</p>
+      <ol class="steps">
+        <li><b>Nominate two teams per domain</b><span>Engineering managers · Oct 15</span></li>
+        <li><b>Fund one automation lead</b><span>$160K · VP Eng · Oct 31</span></li>
+      </ol>
+      <div class="hero push"><div class="value">3<small>FTE</small></div><div class="label">of QA effort freed once the Q4 domains onboard</div></div>
+    </div>
+  </div>
+  <aside class="notes">Start with the 62%: most criteria were only ever checked by hand. Then the mechanism, the pilot numbers, and the rollout. The ask is small: two teams per domain and one automation lead.</aside>
+</section>
